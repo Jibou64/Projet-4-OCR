@@ -1,0 +1,257 @@
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+.mobile-menu {
+  display: none;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.headerImage {
+  width: 80px;
+  height: auto;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.userImage {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.header-buttons a {
+  color: black;
+  margin-right: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.header-buttons a:hover {
+  opacity: 0.8;
+}
+
+.user-button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-button:hover {
+  background-color: #372e86;
+}
+
+.menu-button {
+  display: none; /* Hidden by default, shown in responsive */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Séparateur */
+.separator {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Bouton pour Nouvel Article */
+.new-article-button {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #7451eb;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.new-article-button:hover {
+  background-color: #5c4cdb;
+}
+
+/* Feed Container */
+.feed-container {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.feed-container h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Cartes de post */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.post-card {
+  width: calc(45%);
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card h4 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  margin-bottom: 10px;
+}
+
+.post-author,
+.post-date {
+  font-style: italic;
+  color: #666;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+
+  .user-button {
+    display: none;
+  }
+  .header-buttons a {
+    display: none; /* Hide navigation links */
+  }
+
+  .menu-button {
+    display: block; /* Show menu button */
+  }
+
+  .new-article-button {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin-top: 20px; /* Ajoute une marge en haut */
+
+    /* Vos autres styles */
+    padding: 10px 20px;
+    background-color: #7451eb;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center; /* Centre le texte */
+    transition: background-color 0.3s;
+    max-width: 200px;
+
+    /* Ajout de styles spécifiques pour les appareils mobiles */
+    width: 70%; /* Largeur du bouton adaptée */
+    margin: 20px auto; /* Centre le bouton horizontalement */
+  }
+
+  .new-article-button:hover {
+    background-color: #5c4cdb;
+  }
+
+  .feed-container {
+    margin: 30px auto;
+    padding: 0 10px;
+  }
+
+  .feed-container h2 {
+    font-size: 22px;
+  }
+
+  .post-card {
+    width: calc(100% - 20px); /* One card per line */
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alignement en haut */
+    align-items: flex-end; /* Alignement à droite */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    padding-right: 100px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+
+  .mobile-menu.open {
+    transform: translateX(15%);
+  }
+
+  .mobile-menu a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+
+  }
+
+  .mobile-menu a:hover {
+    opacity: 0.8;
+  }
+
+  .user-button-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .feed-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .feed-container h2 {
+    font-size: 18px;
+  }
+
+  .post-card {
+    width: calc(100% - 20px);
+  }
+}

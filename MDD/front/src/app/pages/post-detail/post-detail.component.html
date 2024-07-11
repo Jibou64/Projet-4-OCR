@@ -1,0 +1,61 @@
+<div class="header">
+  <img src="assets/logo_p6.png" class="headerImage">
+  <div class="header-buttons">
+    <a routerLink="/article" class="article-link">Nouvel Article</a>
+    <a routerLink="/home" class="feed-link" >Articles</a>
+    <a routerLink="/subject" class="subject-link">Thèmes</a>
+    <button (click)="goToUserPage()" class="user-button">
+      <img src="assets/user.png" class="userImage">
+    </button>
+  </div>
+</div>
+<hr class="separator">
+
+<div class="post-detail-container" *ngIf="post">
+  <div class="back-to-home">
+    <a (click)="goToHomePage()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <h2>
+    <span>{{ post.title }}</span>
+  </h2>
+
+  <div class="post-meta">
+    <p class="post-date">{{ post.createdAt | date }}</p>
+    <p class="post-author">{{ post.user.firstName }}</p>
+    <p class="post-subject">{{ post.subject.name }}</p>
+  </div>
+
+  <hr>
+
+  <!-- Section des commentaires -->
+  <div class="comments-section" *ngIf="comments && comments.length > 0">
+    <h3>Comments:</h3>
+    <ul>
+      <li *ngFor="let comment of comments" class="comment-item">
+        <p><strong>{{ comment.user.firstName }} {{ comment.user.lastName }}</strong> - {{ comment.createdAt | date }}</p>
+        <p>{{ comment.content }}</p>
+        <button *ngIf="comment.user.id === user?.id" (click)="deleteComment(comment.id, comment.user.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="!comments || comments.length === 0">
+    <p>No comments available.</p>
+  </div>
+
+  <!-- Formulaire d'ajout de commentaire -->
+  <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)" class="add-comment-form">
+    <textarea name="content" [(ngModel)]="commentContent" required rows="4" placeholder="Write your comment here..."></textarea>
+    <button type="submit" [disabled]="commentForm.invalid">Add Comment</button>
+  </form>
+</div>
+
+<div class="buttons">
+  <button (click)="goToHomePage()">Home Page</button>
+</div>

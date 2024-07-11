@@ -1,0 +1,23 @@
+<body>
+<div class="header">
+  <img src="assets/logo_p6.png" class="headerImage" alt="Logo">
+</div>
+
+<a class="back-arrow" href="/">←</a>
+
+<div class="login-container">
+  <img src="assets/logo_p6.png" class="responsive-logo" alt="Logo">
+  <h2>Se connecter</h2>
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="email">Email ou nom d'utilisateur</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder=""/>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder=""/>
+    </div>
+    <button type="submit">Se connecter</button>
+  </form>
+</div>
+</body>

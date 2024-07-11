@@ -1,0 +1,29 @@
+<div class="header">
+  <img src="assets/logo_p6.png" class="headerImage" alt="Logo">
+</div>
+<a class="back-arrow" routerLink="/">←</a>
+<div class="register-container">
+  <div class="responsive-logo-container">
+    <img src="assets/logo_p6.png" class="responsive-logo" alt="Logo">
+  </div>
+  <h2>Inscription</h2>
+  <form (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input type="text" id="firstName" [(ngModel)]="firstName" name="Prénom" required placeholder=""/>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input type="text" id="lastName" [(ngModel)]="lastName" name="Nom" required placeholder=""/>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder=""/>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" [(ngModel)]="password" name="Mot de passe" required placeholder=""/>
+    </div>
+    <button type="submit" class="submit-button">S'inscrire</button>
+  </form>
+</div>

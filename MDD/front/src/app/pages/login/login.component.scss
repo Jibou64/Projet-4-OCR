@@ -1,0 +1,166 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid black; /* Contour de l'écran */
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #000; /* Fine black bottom line */
+}
+
+.headerImage {
+  width: 80px;
+  height: auto;
+}
+
+/* Flèche de retour */
+.back-arrow {
+  display: block;
+  margin: 20px 0;
+  font-size: 24px; /* Taille de la flèche */
+  color: #5c4cdb;
+  text-decoration: none;
+  text-align: left; /* Alignement à gauche */
+  margin-left: 20px; /* Espacement à gauche */
+  transition: opacity 0.3s; /* Transition pour l'opacité */
+}
+
+.back-arrow:hover {
+  opacity: 0.8; /* Réduit légèrement l'opacité au survol */
+}
+
+/* Login container */
+.login-container {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #5c4cdb; /* Darker violet color */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000; /* Texte noir */
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #7451eb; /* Violet button color */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #5c4cdb; /* Darker violet color */
+}
+
+.register-button {
+  background-color: #fff;
+  color: #5c4cdb;
+  border: 2px solid #7a5bff;
+}
+
+.register-button:hover {
+  background-color: #5c4cdb;
+  color: #fff;
+}
+
+/* Hidden by default, shown only in responsive mode */
+.responsive-logo {
+  display: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    display: none; /* Remove header */
+  }
+
+  .responsive-logo {
+    display: block; /* Show responsive logo */
+    width: 100%; /* Full screen width */
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 20px; /* Centered and margin bottom */
+  }
+
+  .login-container {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .login-container h2 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    display: none; /* Remove header */
+  }
+
+  .back-arrow {
+    font-size: 18px;
+    margin-left: 10px; /* Adjusted margin for smaller screens */
+  }
+
+  .login-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .login-container h2 {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    padding: 8px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

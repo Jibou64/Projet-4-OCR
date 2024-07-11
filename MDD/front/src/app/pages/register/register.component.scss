@@ -1,0 +1,175 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid black; /* Contour de l'écran */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #000; /* Fine black bottom line */
+}
+
+.headerImage {
+  width: 10%;
+  height: 10%;
+}
+
+/* Flèche de retour */
+.back-arrow {
+  display: block;
+  margin: 20px 0;
+  font-size: 24px; /* Taille de la flèche */
+  color: #5c4cdb;
+  text-decoration: none;
+  text-align: left; /* Alignement à gauche */
+  margin-left: 20px; /* Espacement à gauche */
+  transition: opacity 0.3s; /* Transition pour l'opacité */
+}
+
+.back-arrow:hover {
+  opacity: 0.8; /* Réduit légèrement l'opacité au survol */
+}
+
+/* Container styles */
+.register-container {
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.responsive-logo {
+  display: none; /* Hide by default */
+  width: 33.33%; /* 1/3 of the screen width */
+  margin: 0 auto 20px; /* Centered and margin bottom */
+}
+
+.register-container h2 {
+  margin-bottom: 20px;
+  color: black; /* Darker violet color */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: black; /* Darker violet color */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black; /* Contour noir */
+  border-radius: 4px;
+  background-color: white; /* Fond blanc */
+  color: black; /* Texte noir */
+}
+
+.form-group input::placeholder {
+  color: black; /* Texte du placeholder en noir */
+}
+
+.submit-button {
+  width: auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px; /* Bords arrondis */
+  background-color: #7451eb; /* Violet button color */
+  color: #fff;
+  font-size: 14px; /* Taille plus petite */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.submit-button:hover {
+  background-color: #5c4cdb; /* Darker violet color */
+}
+
+.login-button {
+  background-color: #fff;
+  color: #5c4cdb;
+  border: 2px solid #7a5bff;
+}
+
+.login-button:hover {
+  background-color: #5c4cdb;
+  color: #fff;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    display: none; /* Remove header */
+  }
+
+  .responsive-logo {
+    display: block; /* Show responsive logo */
+    width: 100%; /* Full screen width */
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .register-container {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .register-container h2 {
+    font-size: 22px;
+  }
+
+  .submit-button,
+  .login-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    display: none; /* Remove header */
+  }
+
+  .responsive-logo {
+    display: block; /* Show responsive logo */
+    width: 100%; /* Full screen width */
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 20px; /* Centered and margin bottom */
+  }
+
+  .back-arrow {
+    top: 80px;
+    left: 10px;
+    font-size: 14px;
+  }
+
+  .register-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .register-container h2 {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    padding: 8px;
+  }
+
+  .submit-button,
+  .login-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
