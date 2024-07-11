@@ -113,6 +113,7 @@ export class UserComponent implements OnInit {
   }
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    console.log(this.isMenuOpen);
   }
 
   closeMenu(): void {
@@ -148,6 +149,10 @@ export class UserComponent implements OnInit {
 
   goToHomePage(): void {
     this.router.navigate(['/home']);
+  }
+
+  goToUserPage(): void {
+    this.router.navigate(['/userpage']);
   }
 
 }

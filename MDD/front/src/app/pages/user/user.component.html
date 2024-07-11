@@ -11,15 +11,7 @@
 
 <div class="user-container" *ngIf="user">
   <h2>Profil de l'utilisateur</h2>
-  <div class="user-details">
-    <p><strong>Prénom :</strong> {{ user.firstName }}</p>
-    <p><strong>Nom :</strong> {{ user.lastName }}</p>
-    <p><strong>Email :</strong> {{ user.email }}</p>
-    <p><strong>Créé le :</strong> {{ user.createdAt | date }}</p>
-  </div>
-
   <div class="user-edit-form">
-    <h2>Modifier le profil de l'utilisateur</h2>
     <form (ngSubmit)="updateUser()">
       <div class="form-group">
         <label for="firstName">Prénom</label>
@@ -40,6 +32,7 @@
 
       <button type="submit">Modifier</button>
     </form>
+    <a href="#" (click)="logout()" class="logout-link">Déconnexion</a>
   </div>
 
   <div class="subscriptions-container">
@@ -56,7 +49,6 @@
 </div>
 
 <div class="buttons">
-  <button (click)="logout()">Déconnexion</button>
   <button (click)="goToHomePage()">Accueil</button>
 </div>
 
@@ -64,4 +56,7 @@
 <div class="mobile-menu" [class.open]="isMenuOpen">
   <a routerLink="/home" (click)="toggleMenu()">Articles</a>
   <a routerLink="/subject" (click)="toggleMenu()">Thèmes</a>
+  <button (click)="goToUserPage()" class="user-button-mobile">
+    <img src="assets/user.png" class="headerImage-menu">
+  </button>
 </div>

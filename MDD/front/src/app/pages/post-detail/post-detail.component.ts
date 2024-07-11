@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit, Renderer2} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../../services/post.service';
 import { CommentService } from '../../../services/comment.service';
@@ -18,9 +18,16 @@ export class PostDetailComponent implements OnInit {
   post: Post | null = null;
   comments: Comment[] | null = null;
   commentContent: string = '';
+  isMenuOpen: boolean = false;
 
-  constructor(private route: ActivatedRoute, private postService: PostService,
-              private commentService: CommentService, private router: Router, private authService: AuthService, private userService: UserService) {}
+
+  constructor(private route: ActivatedRoute,
+              private postService: PostService,
+              private commentService: CommentService,
+              private router: Router,
+              private authService: AuthService,
+              private renderer: Renderer2,
+              private userService: UserService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -123,5 +130,23 @@ export class PostDetailComponent implements OnInit {
   }
   goToUserPage(): void {
     this.router.navigate(['/userpage']);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent): void {
+    if (!(event.target as HTMLElement).closest('.mobile-menu') && !(event.target as HTMLElement).closest('.menu-button')) {
+      this.closeMenu();
+    }
+  }
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log(this.isMenuOpen);
+  }
+
+  closeMenu(): void {
+    const menu = document.querySelector('.mobile-menu');
+    if (menu) {
+      menu.classList.remove('open');
+    }
   }
 }
