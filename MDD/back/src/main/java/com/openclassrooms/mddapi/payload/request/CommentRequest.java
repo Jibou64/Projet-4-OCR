@@ -8,7 +8,7 @@ public class CommentRequest {
     private String content;
     private Date createdAt;
 
-    // Getters
+
     public Long getUserId() {
         return userId;
     }
@@ -25,7 +25,7 @@ public class CommentRequest {
         return createdAt;
     }
 
-    // Setters
+
     public void setUserId(Long userId) {
         this.userId = userId;
     }

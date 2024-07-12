@@ -1,4 +1,3 @@
-// src/app/models/Post.ts
 
 import { Subject } from './Subject';
 import { User } from './User';

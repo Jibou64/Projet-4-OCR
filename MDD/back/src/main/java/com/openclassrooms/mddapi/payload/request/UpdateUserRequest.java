@@ -17,7 +17,7 @@ public class UpdateUserRequest {
 
     private String password;
 
-    // Getters
+
     public String getFirstName() {
         return firstName;
     }
@@ -34,7 +34,7 @@ public class UpdateUserRequest {
         return password;
     }
 
-    // Setters
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

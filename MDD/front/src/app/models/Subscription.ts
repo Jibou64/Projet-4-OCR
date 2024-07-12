@@ -1,4 +1,4 @@
-// src/app/models/Subscription.ts
+
 
 import { User } from './User';
 import { Subject } from './Subject';

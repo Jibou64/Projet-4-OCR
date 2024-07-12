@@ -59,12 +59,11 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // Ignorer la sérialisation de la liste des posts pour éviter les boucles
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Post> posts;
 
-    // Ignorer la sérialisation de la liste des abonnements pour éviter les boucles
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Subscription> subscriptions;

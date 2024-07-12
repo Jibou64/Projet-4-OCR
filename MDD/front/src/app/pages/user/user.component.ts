@@ -5,10 +5,9 @@ import { UserService } from "../../../services/user.service";
 import { User } from "../../models/User";
 import { UpdateUserRequest } from "../../models/UpdateUserRequest";
 import {SubscriptionService} from "../../../services/subscription.service";
-import {Subject} from "../../models/Subject";
-import {SubjectService} from "../../../services/subject.service";
+import {Subject} from "../../models/Subject"
 import {PostService} from "../../../services/post.service";
-import {Post} from "../../models/Post"; // Assurez-vous que UpdateUserRequest est correctement importé
+import {Post} from "../../models/Post";
 
 @Component({
   selector: 'app-user',

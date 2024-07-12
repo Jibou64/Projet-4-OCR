@@ -41,7 +41,6 @@ public class PostService {
     }
 
     public Post createPost(Post post) {
-        // You can add additional logic here to handle creation
         return postRepository.save(post);
     }
 

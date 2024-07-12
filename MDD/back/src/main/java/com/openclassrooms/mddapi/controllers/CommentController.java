@@ -23,8 +23,7 @@ public class CommentController {
     @PostMapping("/add")
     public ResponseEntity<Map<String, Object>> addComment(@RequestBody CommentRequest commentRequest) {
         commentService.addComment(commentRequest);
-
-        // Préparez la réponse JSON
+        // Prepare JSON response
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Comment added successfully");
         response.put("status", HttpStatus.CREATED.value());

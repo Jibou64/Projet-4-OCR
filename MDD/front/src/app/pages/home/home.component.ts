@@ -149,11 +149,11 @@ export class HomeComponent implements OnInit {
     this.postService.getPostsBySubject(subjectId).subscribe(
       (data) => {
         if (Array.isArray(data)) {
-          console.log('Data received:', data); // Ajouter un log ici
+          console.log('Data received:', data);
           this.affichedPosts = data;
           this.posts = [...this.affichedPosts];
         } else if (data && typeof data === 'object') {
-          console.log('Data received:', data); // Ajouter un log ici
+          console.log('Data received:', data);
           this.affichedPosts = Object.values(data);
           this.posts = [...this.affichedPosts];
         } else {
@@ -197,7 +197,7 @@ export class HomeComponent implements OnInit {
       console.log("valeur de a", a.createdAt, "valeur de b", b.createdAt);
       if (isNaN(dateA) || isNaN(dateB)) {
         console.error('Invalid date format', a.createdAt, b.createdAt);
-        return 0; // Garder l'ordre actuel si les dates sont invalides
+        return 0;
       }
       return dateA - dateB;
     });
@@ -210,7 +210,7 @@ export class HomeComponent implements OnInit {
       console.log("valeur de a", a.createdAt, "valeur de b", b.createdAt);
       if (isNaN(dateA) || isNaN(dateB)) {
         console.error('Invalid date format', a.createdAt, b.createdAt);
-        return 0; // Garder l'ordre actuel si les dates sont invalides
+        return 0;
       }
       return dateB - dateA;
     });
@@ -235,7 +235,7 @@ export class HomeComponent implements OnInit {
     if (userId) {
       this.subscriptionService.subscribeToSubject(subject.id, userId).subscribe(
         (data) => {
-          // Gérer la réponse de la souscription ici si nécessaire
+
           console.log('Souscription réussie', data);
         },
         (error) => {

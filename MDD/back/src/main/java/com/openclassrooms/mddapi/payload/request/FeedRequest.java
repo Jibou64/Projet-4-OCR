@@ -5,7 +5,7 @@ public class FeedRequest {
     private Long userId;
     private Long postId;
 
-    // Constructeurs, getters et setters
+
 
     public FeedRequest() {
     }

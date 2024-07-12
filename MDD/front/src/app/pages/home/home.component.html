@@ -18,6 +18,11 @@
   <!-- Bouton pour Nouvel Article -->
   <button class="new-article-button" (click)="goToArticle()">Créer un article</button>
 
+  <div class="sort-buttons">
+    <button (click)="sortPostsByDateAscending()">Trier par ancienneté</button>
+    <button (click)="sortPostsByDateDescending()">Trier par date récente</button>
+  </div>
+
   <!-- Layout principal avec le feed au centre -->
   <div class="main-content">
     <!-- Feed au centre -->
@@ -27,15 +32,15 @@
           <h4>{{ post.title }}</h4>
           <p>{{ post.content }}</p>
           <p class="post-author">{{ post.user.firstName }}</p>
-          <p class="post-date">{{ post.createdAt | date }}</p>
+          <p class="post-date">{{ post.createdAt | date: 'medium' }}</p>
         </div>
       </div>
       <ng-template #noSubjectSelected>
         <div class="card-list">
           <div class="post-card" *ngFor="let post of getPostsFromSubscriptions()" (click)="goToPostDetail(post.id)">
-            <h4>Titre : {{ post.title }}</h4>
-            <p>Contenu : {{ post.content }}</p>
-            <p class="post-author">Ecrit par : {{ post.user.firstName }}</p>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.content }}</p>
+            <p class="post-author">{{ post.user.firstName }}</p>
           </div>
         </div>
       </ng-template>

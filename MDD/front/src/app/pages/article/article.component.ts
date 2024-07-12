@@ -54,7 +54,6 @@ export class ArticleComponent implements OnInit {
   }
 
   createPost(): void {
-    // Check if a subject is selected
     if (this.selectedSubject == null) {
       console.error('Please select a subject');
       return;
@@ -62,16 +61,15 @@ export class ArticleComponent implements OnInit {
     this.postRequest.subjectId = this.selectedSubject.id;
     console.log("oui", this.selectedSubject.name)
 
-    // Call postService to create the post
+
     this.postService.createPost(this.postRequest).subscribe(
       (response) => {
         console.log('Réponse du serveur:', response);
         console.log('Post créé avec succès');
-        // Reset the form or handle redirection if needed
+
       },
       (error) => {
         console.error('Erreur lors de la création du post', error);
-        // Display the exact error message received from the backend
         if (error.error && error.error.message) {
           console.error('Message d\'erreur du serveur:', error.error.message);
         }

@@ -1,4 +1,4 @@
-// src/app/models/User.ts
+
 
 export class User {
   id: number;

@@ -10,7 +10,7 @@ public class SubscriptionRequest {
     @NotNull
     private Long subjectId;
 
-    // Getters and setters
+
     public Long getUserId() {
         return userId;
     }

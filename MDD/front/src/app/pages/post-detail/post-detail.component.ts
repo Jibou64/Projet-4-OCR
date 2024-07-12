@@ -96,7 +96,7 @@ export class PostDetailComponent implements OnInit {
 
     this.commentService.addComment(commentRequest).subscribe(
       () => {
-        // Refresh comments after adding
+
         // @ts-ignore
         this.fetchComments(this.post.id);
 
