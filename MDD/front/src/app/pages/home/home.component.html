@@ -1,5 +1,4 @@
 <div class="container">
-  <!-- Header avec les boutons -->
   <div class="header">
     <img src="assets/logo_p6.png" class="headerImage">
     <div class="header-buttons">
@@ -11,16 +10,9 @@
       </button>
     </div>
   </div>
-
-  <!-- Ligne séparatrice -->
   <hr class="separator">
-
-  <!-- Bouton pour Nouvel Article -->
   <button class="new-article-button" (click)="goToArticle()">Créer un article</button>
-
-  <!-- Layout principal avec le feed au centre -->
   <div class="main-content">
-    <!-- Feed au centre -->
     <div class="feed-container">
       <div *ngIf="selectedSubject; else noSubjectSelected" class="card-list">
         <div class="post-card" *ngFor="let post of selectedSubject.posts" (click)="goToPostDetail(post.id)">
@@ -41,8 +33,6 @@
       </ng-template>
     </div>
   </div>
-
-  <!-- Menu en transition pour les versions mobiles -->
   <div class="mobile-menu" [class.open]="isMenuOpen">
     <a routerLink="/home" (click)="toggleMenu()">Articles</a>
     <a routerLink="/subject" (click)="toggleMenu()">Thèmes</a>

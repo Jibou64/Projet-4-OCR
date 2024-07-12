@@ -1,23 +1,17 @@
 <div class="container">
-  <!-- Header avec logo et boutons -->
   <div class="header">
     <img src="assets/logo_p6.png" class="headerImage">
     <div class="header-buttons">
       <button class="menu-button" (click)="toggleMenu()">&#9776;</button>
-      <!-- Boutons du menu pour la version responsive (masqués en desktop) -->
       <a routerLink="/home" routerLinkActive="active-link" class="feed-link hidden-desktop">Articles</a>
       <a routerLink="/subject" class="subject-link hidden-desktop">Thèmes</a>
-      <!-- Bouton utilisateur (masqué en desktop) -->
       <button id="UserMenuButton" (click)="goToUserPage()" class="user-button hidden-desktop">
         <img src="assets/user.png" class="userImage">
       </button>
     </div>
   </div>
-
-  <!-- Ligne séparatrice -->
   <hr class="separator">
-  <a class="back-arrow" href="/">←</a>
-  <!-- Formulaire d'article -->
+  <a class="back-arrow" href="/home">←</a>
   <div class="article-form">
     <h2>Créer un nouvel article</h2>
     <form (ngSubmit)="createPost()">
@@ -38,12 +32,9 @@
       <button class="CreateButton" type="submit">Créer</button>
     </form>
   </div>
-
-  <!-- Menu en transition pour les versions mobiles -->
   <div class="mobile-menu" [class.open]="isMenuOpen">
     <a routerLink="/home" (click)="toggleMenu()">Articles</a>
     <a routerLink="/subject" (click)="toggleMenu()">Thèmes</a>
-    <!-- Bouton utilisateur pour la version responsive -->
     <button (click)="goToUserPage()" class="user-button user-button-mobile">
       <img src="assets/user.png" class="userImage">
     </button>

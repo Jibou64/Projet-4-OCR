@@ -1,5 +1,4 @@
 <div class="container">
-  <!-- Header avec logo et bouton UserPage -->
   <div class="header">
     <img src="assets/logo_p6.png" class="headerImage">
     <div class="header-buttons">
@@ -11,16 +10,10 @@
     </div>
     <button class="menu-button" (click)="toggleMenu()">☰</button>
   </div>
-
-  <!-- Ligne séparatrice -->
   <hr class="separator">
-
-  <!-- Layout principal avec sujets à gauche et feed au centre -->
   <div class="main-content">
-    <!-- Sujets à gauche -->
     <div class="subjects-container">
       <div class="subject-cards">
-        <!-- Boucle sur les sujets -->
         <div class="subject-card" *ngFor="let subject of subjects" (click)="selectSubject(subject)">
           <h3>{{ subject.name }}</h3>
           <div class="subject-description">
@@ -30,8 +23,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Feed au centre -->
     <div class="feed-container">
       <h2>Articles</h2>
       <div *ngIf="selectedSubject" class="card-list">
@@ -44,8 +35,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Mobile menu -->
   <div class="mobile-menu" [class.open]="isMenuOpen">
     <a routerLink="/home">Articles</a>
     <a routerLink="/subject">Thèmes</a>
