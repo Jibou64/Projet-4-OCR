@@ -30,11 +30,11 @@
         <input type="password" id="password" [(ngModel)]="updateUserRequest.password" name="password" required>
       </div>
 
-      <button type="submit">Modifier</button>
+      <button class="SaveButton" type="submit">Sauvegarder</button>
     </form>
     <a href="#" (click)="logout()" class="logout-link">Déconnexion</a>
   </div>
-
+  <hr class="separator">
   <div class="subscriptions-container">
     <div class="section-header">
       <h2>Mes Abonnements</h2>
@@ -42,15 +42,15 @@
     <ul class="subscriptions">
       <li *ngFor="let subscription of subscriptions">
         <span class="subscription-name">{{ subscription.name }}</span>
+        <div class="subject-description">
+          <p>{{ subscription.description }}</p>
+        </div>
         <button class="unsubscribe-button" (click)="unsubscribeUser(subscription.id)">Se désabonner</button>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="buttons">
-  <button (click)="goToHomePage()">Accueil</button>
-</div>
 
 <!-- Menu en transition pour les versions mobiles -->
 <div class="mobile-menu" [class.open]="isMenuOpen">

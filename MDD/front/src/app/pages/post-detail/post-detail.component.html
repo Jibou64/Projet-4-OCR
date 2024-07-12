@@ -53,8 +53,10 @@
     </div>
 
     <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)" class="add-comment-form">
-      <textarea name="content" [(ngModel)]="commentContent" required rows="4" placeholder="Write your comment here..."></textarea>
-      <button type="submit" [disabled]="commentForm.invalid">Add Comment</button>
+      <textarea name="content" [(ngModel)]="commentContent" required rows="4" placeholder="Ecrivez votre commentaire"></textarea>
+      <button type="submit" [disabled]="commentForm.invalid">
+        <img src="assets/🦆%20icon%20_send_.png">
+      </button>
     </form>
   </div>
 

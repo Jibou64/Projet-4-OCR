@@ -112,7 +112,11 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
+.active-link {
+  color: #7451eb;
+  font-weight: bold;
+  text-decoration: underline; /* Facultatif, ajoute un soulignement */
+}
 .user-button:hover {
   background-color: #372e86;
 }

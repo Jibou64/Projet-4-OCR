@@ -4,7 +4,7 @@
     <img src="assets/logo_p6.png" class="headerImage">
     <div class="header-buttons">
       <a routerLink="/home" class="feed-link">Articles</a>
-      <a routerLink="/subject" class="subject-link">Thèmes</a>
+      <a routerLink="/subject" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="subject-link">Thèmes</a>
       <button (click)="goToUserPage()" class="user-button">
         <img src="assets/user.png" class="userImage">
       </button>

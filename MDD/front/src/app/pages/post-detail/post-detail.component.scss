@@ -161,6 +161,10 @@ h2 {
   justify-content: flex-end;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 16px 0px 0px 0px;
+  border: 1px solid transparent;
+  border-width: 1px 0px 0px 0px;
+
 }
 
 .add-comment-form textarea {
@@ -180,16 +184,13 @@ h2 {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #5c4cdb;
   color: #fff;
   border: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
-.add-comment-form button:hover {
-  background-color: #4b3ca7;
-}
+
 
 .buttons {
   margin-top: 20px;

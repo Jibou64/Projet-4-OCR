@@ -15,6 +15,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { SubjectComponent } from './pages/subject/subject.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SubjectComponent } from './pages/subject/subject.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [
     AuthService,
