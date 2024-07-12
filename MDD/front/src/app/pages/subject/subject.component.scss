@@ -1,21 +1,21 @@
-/* Styles généraux */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
 
 .post-card {
-  width: calc(50% - 10px); /* Calcul de la largeur pour deux cartes par ligne avec espace */
+  width: calc(50% - 10px);
   background-color: #f5f5f5;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   cursor: pointer;
   border-radius: 5px;
-  display: flex; /* Ajout de display flex */
-  flex-direction: column; /* Aligner le contenu en colonne */
-  justify-content: space-between; /* Espace entre le titre et le bouton */
-  margin-bottom: 20px; /* Espacement entre chaque carte */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .post-card:hover {
@@ -50,8 +50,8 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  align-self: center; /* Aligner le bouton au centre horizontalement */
-  margin-top: auto; /* Aligner le bouton en bas de la carte */
+  align-self: center;
+  margin-top: auto;
 }
 
 .post-card button:hover {
@@ -67,7 +67,7 @@ body {
   padding: 20px;
 }
 
-/* Header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -118,14 +118,14 @@ body {
 }
 
 .menu-button {
-  display: none; /* Hidden by default, shown in responsive */
+  display: none;
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
 }
 
-/* Séparateur */
+
 .separator {
   width: 100%;
   border: none;
@@ -133,7 +133,7 @@ body {
   margin: 20px 0;
 }
 
-/* Subject Container */
+
 .subjects-container {
   background-color: #fff;
   padding: 20px;
@@ -144,7 +144,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Cartes de sujet */
+
 .subject-cards {
   display: flex;
   flex-wrap: wrap;
@@ -159,9 +159,9 @@ body {
   transition: transform 0.3s;
   cursor: pointer;
   border-radius: 5px;
-  display: flex; /* Ajout de display flex */
-  flex-direction: column; /* Aligner le contenu en colonne */
-  justify-content: space-between; /* Espace entre le titre et le bouton */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .subject-card:hover {
@@ -193,22 +193,22 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  align-self: center; /* Aligner le bouton au centre horizontalement */
-  margin-top: auto; /* Aligner le bouton en bas de la carte */
+  align-self: center;
+  margin-top: auto;
 }
 
 .subject-card button:hover {
   background-color: #4b3ca7;
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 768px) {
   .header-buttons a {
-    display: none; /* Hide navigation links */
+    display: none;
   }
 
   .menu-button {
-    display: block; /* Show menu button */
+    display: block;
   }
 
   .new-article-button {
@@ -244,7 +244,7 @@ body {
   }
 
   .subject-card {
-    width: calc(100% - 20px); /* One card per line */
+    width: calc(100% - 20px);
   }
 
   .mobile-menu {
@@ -276,7 +276,7 @@ body {
     text-decoration: none;
     margin-bottom: 20px;
     transition: opacity 0.3s;
-    align-self: flex-end; /* Aligner les éléments à droite */
+    align-self: flex-end;
   }
 
   .mobile-menu a:hover {
@@ -284,9 +284,9 @@ body {
   }
 
   .user-button-menu {
-    align-self: flex-end; /* Aligner le bouton utilisateur en bas à droite */
-    margin-top: auto; /* Place le bouton tout en bas */
-    margin-bottom: 20px; /* Espacement par rapport aux autres éléments */
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
     padding: 10px 20px;
     background-color: transparent;
     color: #fff;
@@ -333,12 +333,12 @@ body {
 }
 @media (max-width: 768px) {
   .post-card {
-    width: calc(50% - 10px); /* Deux cartes par ligne */
+    width: calc(50% - 10px);
   }
 }
 
 @media (max-width: 480px) {
   .post-card {
-    width: calc(100% - 20px); /* Une carte par ligne */
+    width: calc(100% - 20px);
   }
 }

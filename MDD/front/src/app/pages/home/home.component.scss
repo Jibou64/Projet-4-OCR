@@ -1,4 +1,4 @@
-/* Styles généraux */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -12,7 +12,7 @@ body {
   padding: 20px;
 }
 
-/* Header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -57,20 +57,23 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
+.user-button-mobile {
+  height: 48px;
+  width: 48px;
+}
 .user-button:hover {
   background-color: #372e86;
 }
 
 .menu-button {
-  display: none; /* Hidden by default, shown in responsive */
+  display: none;
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
 }
 
-/* Séparateur */
+
 .separator {
   width: 100%;
   border: none;
@@ -78,7 +81,7 @@ body {
   margin: 20px 0;
 }
 
-/* Bouton pour Nouvel Article */
+
 .new-article-button {
   display: block;
   margin-bottom: 20px;
@@ -97,7 +100,7 @@ body {
   background-color: #5c4cdb;
 }
 
-/* Feed Container */
+
 .feed-container {
   background-color: #fff;
   padding: 20px;
@@ -108,7 +111,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Cartes de post */
+
 .card-list {
   display: flex;
   flex-wrap: wrap;
@@ -141,7 +144,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 5; /* Limite à 5 lignes */
+  -webkit-line-clamp: 5;
   margin-bottom: 10px;
 }
 
@@ -151,27 +154,27 @@ body {
   color: #666;
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 768px) {
 
   .user-button {
     display: none;
   }
   .header-buttons a {
-    display: none; /* Hide navigation links */
+    display: none;
   }
 
   .menu-button {
-    display: block; /* Show menu button */
+    display: block;
   }
 
   .new-article-button {
-    display: flex; /* Utilisation de Flexbox */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    margin-top: 20px; /* Ajoute une marge en haut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 
-    /* Vos autres styles */
+
     padding: 10px 20px;
     background-color: #7451eb;
     color: #fff;
@@ -179,13 +182,13 @@ body {
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
-    text-align: center; /* Centre le texte */
+    text-align: center;
     transition: background-color 0.3s;
     max-width: 200px;
 
-    /* Ajout de styles spécifiques pour les appareils mobiles */
-    width: 70%; /* Largeur du bouton adaptée */
-    margin: 20px auto; /* Centre le bouton horizontalement */
+
+    width: 70%;
+    margin: 20px auto;
   }
 
   .new-article-button:hover {
@@ -202,19 +205,20 @@ body {
   }
 
   .post-card {
-    width: calc(100% - 20px); /* One card per line */
+    width: calc(100% - 20px);
   }
 
   .mobile-menu {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alignement en haut */
-    align-items: flex-end; /* Alignement à droite */
+    justify-content: flex-start;
+    align-items: flex-end;
     position: fixed;
-    top: 0;
+    bottom: 0;
+    top: auto;
     right: 0;
     width: 15%;
-    height: 100%;
+    height: 90%;
     background-color: white;
     color: black;
     padding: 20px;
@@ -222,7 +226,6 @@ body {
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
-
 
   .mobile-menu.open {
     transform: translateX(15%);
@@ -234,15 +237,49 @@ body {
     text-decoration: none;
     margin-bottom: 20px;
     transition: opacity 0.3s;
-
+    align-self: flex-end;
   }
 
   .mobile-menu a:hover {
     opacity: 0.8;
   }
 
-  .user-button-mobile {
-    display: block;
+  .user-button-menu {
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .user-button-menu:hover {
+    background-color: #4b3ca7;
+  }
+
+
+  .user-button {
+    display: none;
+  }
+  .user-button-menu {
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    margin-bottom: 30px;
+
+
+  }
+
+  .headerImage {
+    height: 48px;
+    width: 48px;
   }
 }
 

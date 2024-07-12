@@ -1,16 +1,16 @@
-/* General styles */
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid black; /* Contour de l'écran */
+  border: 1px solid black;
 }
 
 .header {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid #000; /* Fine black bottom line */
+  border-bottom: 1px solid #000;
 }
 
 .headerImage {
@@ -18,23 +18,23 @@ body {
   height: 10%;
 }
 
-/* Flèche de retour */
+
 .back-arrow {
   display: block;
   margin: 20px 0;
-  font-size: 24px; /* Taille de la flèche */
+  font-size: 24px;
   color: #5c4cdb;
   text-decoration: none;
-  text-align: left; /* Alignement à gauche */
-  margin-left: 20px; /* Espacement à gauche */
-  transition: opacity 0.3s; /* Transition pour l'opacité */
+  text-align: left;
+  margin-left: 20px;
+  transition: opacity 0.3s;
 }
 
 .back-arrow:hover {
-  opacity: 0.8; /* Réduit légèrement l'opacité au survol */
+  opacity: 0.8;
 }
 
-/* Container styles */
+
 .register-container {
   max-width: 400px;
   margin: 50px auto;
@@ -42,14 +42,14 @@ body {
 }
 
 .responsive-logo {
-  display: none; /* Hide by default */
-  width: 33.33%; /* 1/3 of the screen width */
-  margin: 0 auto 20px; /* Centered and margin bottom */
+  display: none;
+  width: 33%;
+  margin: 0 auto 20px;
 }
 
 .register-container h2 {
   margin-bottom: 20px;
-  color: black; /* Darker violet color */
+  color: black;
 }
 
 .form-group {
@@ -60,38 +60,38 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  color: black; /* Darker violet color */
+  color: black;
 }
 
 .form-group input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid black; /* Contour noir */
+  border: 1px solid black;
   border-radius: 4px;
-  background-color: white; /* Fond blanc */
-  color: black; /* Texte noir */
+  background-color: white;
+  color: black;
 }
 
 .form-group input::placeholder {
-  color: black; /* Texte du placeholder en noir */
+  color: black;
 }
 
 .submit-button {
   width: auto;
   padding: 8px 20px;
   border: none;
-  border-radius: 10px; /* Bords arrondis */
-  background-color: #7451eb; /* Violet button color */
+  border-radius: 10px;
+  background-color: #7451eb;
   color: #fff;
-  font-size: 14px; /* Taille plus petite */
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
   margin-bottom: 10px;
 }
 
 .submit-button:hover {
-  background-color: #5c4cdb; /* Darker violet color */
+  background-color: #5c4cdb;
 }
 
 .login-button {
@@ -105,15 +105,15 @@ body {
   color: #fff;
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 768px) {
   .header {
-    display: none; /* Remove header */
+    display: none;
   }
 
   .responsive-logo {
-    display: block; /* Show responsive logo */
-    width: 100%; /* Full screen width */
+    display: block;
+    width: 100%;
     height: auto;
     max-width: 300px;
     margin: 0 auto 20px;
@@ -137,15 +137,15 @@ body {
 
 @media (max-width: 480px) {
   .header {
-    display: none; /* Remove header */
+    display: none;
   }
 
   .responsive-logo {
-    display: block; /* Show responsive logo */
-    width: 100%; /* Full screen width */
+    display: block;
+    width: 100%;
     height: auto;
     max-width: 300px;
-    margin: 0 auto 20px; /* Centered and margin bottom */
+    margin: 0 auto 20px;
   }
 
   .back-arrow {

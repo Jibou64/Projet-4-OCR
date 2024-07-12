@@ -1,4 +1,4 @@
-/* Styles généraux */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -19,7 +19,7 @@ body {
   width: 95%;
 
 }
-/* Header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,7 @@ body {
 }
 
 .header-buttons a:active {
-  color: violet; /* Couleur du texte violette pour le lien actif */
+  color: violet;
   font-weight: bold;
 }
 
@@ -86,18 +86,18 @@ body {
 .back-arrow {
   display: block;
   margin: 20px 0;
-  font-size: 24px; /* Taille de la flèche */
+  font-size: 24px;
   color: #5c4cdb;
   text-decoration: none;
-  text-align: left; /* Alignement à gauche */
-  transition: opacity 0.3s; /* Transition pour l'opacité */
+  text-align: left;
+  transition: opacity 0.3s;
 }
 
 .back-arrow:hover {
-  opacity: 0.8; /* Réduit légèrement l'opacité au survol */
+  opacity: 0.8;
 }
 
-/* Séparateur */
+
 .separator {
   width: 100%;
   border: none;
@@ -105,7 +105,7 @@ body {
   margin: 20px 0;
 }
 
-/* Formulaire d'article */
+
 .article-form {
   max-width: 600px;
   margin: 20px auto;
@@ -166,14 +166,14 @@ button[type="submit"]:hover {
   background-color: #372e86;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
 
   #UserMenuButton{
     display: none;
   }
   .header-buttons a {
-    display: none; /* Hide navigation links */
+    display: none;
   }
 
   .menu-button {
@@ -185,23 +185,23 @@ button[type="submit"]:hover {
   }
 
   .header {
-    flex-direction: row; /* Flex direction horizontale */
-    justify-content: space-between; /* Espacement maximum entre les éléments */
-    align-items: center; /* Centrage vertical des éléments */
-    margin-top: 10px; /* Espacement au-dessus de la barre d'en-tête */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
   }
 
   .headerImage {
-    margin-right: auto; /* Pour aligner l'image à gauche */
+    margin-right: auto;
   }
 
   .header-buttons {
-    margin-left: auto; /* Pour aligner les boutons à droite */
+    margin-left: auto;
   }
 
   .menu-button {
     display: block;
-    font-size: 24px; /* Taille du bouton menu */
+    font-size: 24px;
     cursor: pointer;
   }
 
@@ -250,11 +250,11 @@ button[type="submit"]:hover {
       text-decoration: none;
       margin-bottom: 20px;
       transition: opacity 0.3s;
-      margin-top: 10px; /* Espacement en haut des liens */
+      margin-top: 10px;
     }
 
     .mobile-menu .user-button {
-      margin-top: auto; /* Place le bouton utilisateur en bas */
+      margin-top: auto;
     }
   }
 
@@ -267,7 +267,7 @@ button[type="submit"]:hover {
     opacity: 0.8;
   }
 
-  /* Afficher le bouton utilisateur dans la version responsive */
+
 
 }
 
@@ -297,7 +297,7 @@ button[type="submit"]:hover {
 
 
 
-  /* Afficher le bouton utilisateur dans la version responsive */
+
   .mobile-menu .user-button {
     display: block;
   }

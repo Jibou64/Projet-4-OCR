@@ -1,60 +1,70 @@
-<div class="header">
-  <img src="assets/logo_p6.png" class="headerImage">
-  <div class="header-buttons">
+<div class="page-container">
+
+  <div class="header" *ngIf="post">
+    <img src="assets/logo_p6.png" class="headerImage">
+    <div class="header-buttons">
+      <a routerLink="/home" routerLinkActive="active" class="feed-link hidden-desktop">Articles</a>
+      <a routerLink="/subject" class="subject-link hidden-desktop">Thèmes</a>
+      <button (click)="goToUserPage()" class="user-button">
+        <img src="assets/user.png" class="userImage">
+      </button>
+    </div>
     <button class="menu-button" (click)="toggleMenu()">&#9776;</button>
-    <a routerLink="/home" routerLinkActive="active" class="feed-link hidden-desktop">Articles</a>
-    <a routerLink="/subject" class="subject-link hidden-desktop">Thèmes</a>
+  </div>
+
+  <hr class="separator">
+
+  <div class="top-section">
+    <div class="arrow">
+      <a class="back-arrow" href="/home">←</a>
+    </div>
+    <div class="postTop">
+    <div class="post-detail-container" *ngIf="post">
+      <h2>{{ post.title }}</h2>
+      <div class="post-meta">
+        <p class="post-date">{{ post.createdAt | date }}</p>
+        <div class="post-author">{{ post.user.firstName }}</div>
+        <p class="post-subject">{{ post.subject.name }}</p>
+      </div>
+      <div class="post-content">{{ post.content }}</div>
+    </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="bottom-section">
+    <div class="comments-section" *ngIf="comments && comments.length > 0">
+      <h3>Comments:</h3>
+      <ul>
+        <li *ngFor="let comment of comments" class="comment-item">
+          <div class="comment-content">
+            <div class="comment-header">
+              <strong>{{ comment.user.firstName }} {{ comment.user.lastName }}</strong>
+            </div>
+            <p>{{ comment.content }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="!comments || comments.length === 0">
+      <p>No comments available.</p>
+    </div>
+
+    <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)" class="add-comment-form">
+      <textarea name="content" [(ngModel)]="commentContent" required rows="4" placeholder="Write your comment here..."></textarea>
+      <button type="submit" [disabled]="commentForm.invalid">Add Comment</button>
+    </form>
+  </div>
+
+  <div class="mobile-menu" [class.open]="isMenuOpen">
+    <a routerLink="/home">Articles</a>
+    <a routerLink="/subject">Thèmes</a>
+    <button (click)="goToUserPage()" class="user-button-menu">
+      <img src="assets/user.png" class="userImage">
+    </button>
   </div>
 </div>
-<hr class="separator">
 
-<div class="post-detail-container" *ngIf="post">
-  <div class="back-to-home">
-    <a (click)="goToHomePage()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-    </a>
-  </div>
 
-  <h2>{{ post.title }}</h2>
-
-  <div class="post-meta">
-    <p class="post-date">{{ post.createdAt | date }}</p>
-    <p class="post-author">{{ post.user.firstName }}</p>
-    <p class="post-subject">{{ post.subject.name }}</p>
-    <p class="post-content"> {{post.content}} </p>
-  </div>
-
-  <hr>
-
-  <div class="comments-section" *ngIf="comments && comments.length > 0">
-    <h3>Comments:</h3>
-    <ul>
-      <li *ngFor="let comment of comments" class="comment-item">
-        <p><strong>{{ comment.user.firstName }} {{ comment.user.lastName }}</strong> - {{ comment.createdAt | date }}</p>
-        <p>{{ comment.content }}</p>
-        <button *ngIf="comment.user.id === user?.id" (click)="deleteComment(comment.id, comment.user.id)">Delete</button>
-      </li>
-    </ul>
-  </div>
-
-  <div *ngIf="!comments || comments.length === 0">
-    <p>No comments available.</p>
-  </div>
-
-  <form #commentForm="ngForm" (ngSubmit)="addComment(commentForm)" class="add-comment-form">
-    <textarea name="content" [(ngModel)]="commentContent" required rows="4" placeholder="Write your comment here..."></textarea>
-    <button type="submit" [disabled]="commentForm.invalid">Add Comment</button>
-  </form>
-</div>
-
-<div class="buttons">
-  <button (click)="goToHomePage()">Home Page</button>
-</div>
-
-<div class="mobile-menu" [class.open]="isMenuOpen">
-  <a routerLink="/home" (click)="toggleMenu()">Articles</a>
-  <a routerLink="/subject" (click)="toggleMenu()">Thèmes</a>
-</div>

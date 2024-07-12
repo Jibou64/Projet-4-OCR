@@ -1,28 +1,84 @@
-/* Styles du composant PostDetail */
+.top-section {
+  display: flex;
+}
 
-/* Header */
+.postTop {
+  display: flex;
+  padding-left: 80px;
+}
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+
+}
+.back-arrow {
+  display: block;
+  font-size: 24px;
+  color: #5c4cdb;
+  text-decoration: none;
+  text-align: left;
+  transition: opacity 0.3s;
+  padding-top: 10px;
+
+}
+
+.back-arrow:hover {
+  opacity: 0.8;
+}
+.comment-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment-header {
+  width: 114px;
+  margin-right: 10px; /* Espacement entre comment-header et comment-content */
+}
+
+.comment-content p {
+  width: 390px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment-item button {
+  margin-top: 10px; /* Espacement entre le contenu du commentaire et le bouton */
+  padding: 8px 16px;
+  background-color: #5c4cdb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.comment-item button:hover {
+  background-color: #4b3ca7;
+}
+
+/* Le reste de votre CSS reste inchangé */
+
+.page-container {
+  padding: 20px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .headerImage {
   width: 80px;
   height: auto;
-}
-
-.post-content {
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 5; /* Limite à 5 lignes */
-  margin-bottom: 10px;
 }
 
 .header-buttons {
@@ -42,13 +98,6 @@
   opacity: 0.8;
 }
 
-.menu-button {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
 
 .separator {
   width: 100%;
@@ -60,13 +109,9 @@
 .post-detail-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 20px auto;
+  align-items: flex-start; /* Ajustement pour aligner le contenu à gauche */
   max-width: 800px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -84,13 +129,20 @@ h2 {
 
 .post-meta p {
   margin-right: 20px;
-  font-size: 0.9em;
+  font-size: 16px;
   color: #888;
 }
 
 .post-meta .post-subject {
+  margin-right: 20px;
+
   flex-grow: 1;
-  font-style: italic;
+}
+.post-author {
+  margin-right: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+
 }
 
 .comments-section {
@@ -103,48 +155,28 @@ h2 {
   color: #333;
 }
 
-.comment-item {
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.comment-item p {
-  margin-bottom: 5px;
-}
-
-.comment-item button {
-  padding: 8px 16px;
-  background-color: #5c4cdb;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.comment-item button:hover {
-  background-color: #4b3ca7;
-}
-
 .add-comment-form {
-  margin-top: 20px;
-  width: 100%;
+  width: 570px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .add-comment-form textarea {
-  width: 100%;
+  width: 570px;
+  max-width: 100%;
   padding: 10px;
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  float: right;
 }
 
 .add-comment-form button {
-  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -179,128 +211,165 @@ h2 {
 .buttons button:hover {
   background-color: #4b3ca7;
 }
-
-/* Mobile Menu */
 .mobile-menu {
   display: none;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 15%;
-  height: 100%;
-  background-color: white;
-  color: black;
-  padding: 20px;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
+}
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.mobile-menu.open {
-  transform: translateX(0);
-  display: flex;
+.userImage {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
 }
 
-.mobile-menu a {
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-  margin-bottom: 20px;
-  transition: opacity 0.3s;
-  text-align: right;
-}
-
-.mobile-menu a:hover {
-  opacity: 0.8;
-}
-
-/* Styles responsifs */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .header-buttons a {
-    display: none;
-  }
-
-  .post-content {
-
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 5; /* Limite à 5 lignes */
-    margin-bottom: 10px;
-    min-width: 261px;
-  }
 
   .menu-button {
     display: block;
   }
-
-  .post-detail-container {
-    padding: 15px;
+  .user-button-menu {
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    right: 0;
+    width: 15%;
+    height: 90%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    padding-right: 100px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 
+  .mobile-menu.open {
+    transform: translateX(15%);
+  }
+
+  .mobile-menu a:hover {
+    opacity: 0.8;
+  }
+
+  .mobile-menu a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+    align-self: flex-end;
+  }
   .header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
   }
 
   .headerImage {
-    margin-right: auto;
+    width: 80px; /* Adjust as needed */
+    height: auto;
+    margin-right: auto; /* Pushes the logo to the left */
   }
 
   .header-buttons {
-    margin-left: auto;
+    display: none;
   }
 
-  .menu-button {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
+
+  .arrow {
+    order: -1; /* Move the arrow to the top left */
   }
 
-  .comments-section {
-    margin-top: 15px;
+  .postTop {
+    padding-left: 0; /* Remove padding for responsive layout */
   }
 
-  .comment-item button {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .headerImage {
-    width: 60px;
+  .post-detail-container {
+    padding: 0 20px; /* Add padding to the sides */
   }
 
-  .header-buttons a {
-    font-size: 0.8rem;
-    margin-right: 5px;
-  }
-
-  h2 {
-    font-size: 1.5em;
+  .post-meta {
+    flex-wrap: wrap; /* Allow items to wrap */
   }
 
   .post-meta p {
-    font-size: 0.8em;
+    width: 100%; /* Full width for each meta item */
+    margin-bottom: 5px; /* Adjust spacing between items */
   }
 
-  .comment-item button {
-    font-size: 12px;
-    padding: 4px 10px;
+  .post-content {
+    word-wrap: break-word; /* Ensure content wraps */
+  }
+
+  .section-divider {
+    margin: 20px 0; /* Adjust spacing */
+    border-top: 1px solid #ccc; /* Thin separator */
+  }
+
+  .comments-section {
+    margin-top: 20px; /* Adjust spacing */
+  }
+
+  .comment-item {
+    padding: 10px; /* Padding for each comment */
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    margin-bottom: 15px; /* Adjust spacing between comments */
+  }
+
+  .comment-header {
+    margin-right: 0; /* Remove margin between header and content */
+  }
+
+  .comment-content p {
+    width: auto; /* Allow comments to expand */
+    margin-left: 0; /* Center content */
+    margin-right: 0; /* Center content */
+    box-shadow: none; /* Remove box shadow */
+    background-color: transparent; /* Transparent background */
+  }
+
+  .add-comment-form {
+    width: 100%; /* Full width */
+    padding: 10px 20px; /* Padding for form */
+    margin-top: 20px; /* Adjust spacing */
   }
 
   .add-comment-form textarea {
-    font-size: 0.9em;
+    width: 100%; /* Full width textarea */
+    max-width: 100%; /* Ensure textarea does not overflow */
+    margin-bottom: 10px; /* Adjust spacing */
+    float: none; /* Remove float */
+  }
+
+  .buttons {
+    text-align: center; /* Center buttons */
   }
 
   .buttons button {
-    font-size: 14px;
-    padding: 8px 16px;
+    margin-right: 10px; /* Adjust spacing between buttons */
   }
 }
+

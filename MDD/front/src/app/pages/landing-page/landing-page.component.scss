@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid black; /* Ajouté pour le contour de l'écran */
+  border: 1px solid black;
 }
 
 .landing-page-container {
@@ -20,7 +20,7 @@ h1 {
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 100px;
 }
 
 .button {
@@ -45,7 +45,6 @@ h1 {
   height: auto;
 }
 
-/* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
   .landing-page-container {
@@ -59,7 +58,7 @@ h1 {
 
   .buttons {
     flex-direction: column;
-    gap: 20px; /* Augmenté à 20px */
+    gap: 30px;
   }
 
   .button {
@@ -79,7 +78,7 @@ h1 {
   }
 
   .buttons {
-    gap: 15px; /* Augmenté à 15px */
+    gap: 15px;
   }
 
   .button {
